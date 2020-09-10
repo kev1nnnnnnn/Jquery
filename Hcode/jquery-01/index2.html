@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Index2</title>
+    <style>
+        form {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-border">
+        <div class="navbar mb-3 navbar-brand">
+            <ul class="nav">
+                <li class="nav-link">
+                    <a href="" title="pagina incial">Home</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">Serviços</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 id="titulo">Curso Jquery</h1>
+                <p class="paragrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium magnam laboriosam iure suscipit ipsa architecto perspiciatis nam aperiam doloremque ex, sit earum adipisci obcaecati, eius omnis alias labore sed officia!</p>
+                <p class="paragrafo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem tempora dolor ut dicta modi eos itaque laudantium illo obcaecati quisquam assumenda laboriosam suscipit quam deleniti minus, nemo quod aut adipisci!</p>
+                <hr>
+            </div>
+            <div class="col-md-6">
+                <h1 id="titulo">Curso Jquery</h1>
+                <p class="paragrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium magnam laboriosam iure suscipit ipsa architecto perspiciatis nam aperiam doloremque ex, sit earum adipisci obcaecati, eius omnis alias labore sed officia!</p>
+                <p class="paragrafo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem tempora dolor ut dicta modi eos itaque laudantium illo obcaecati quisquam assumenda laboriosam suscipit quam deleniti minus, nemo quod aut adipisci!</p>
+                <hr>
+            </div> 
+        </div>
+        
+    </div>
+
+    
+    <div class="container cars">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Carros</h3>
+                <ul class="list-group mb-4">
+                    <li data-ano="1983" class="list-group-item">Uno <span> - Fiat</span></li>
+                    <li data-ano="1996" class="list-group-item">Pálio <span> - GM</span></li>
+                    <li data-ano="2013" class="list-group-item">ônix </li>
+                    <li></li> 
+                    <li></li> 
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h3>Tunados</h3>
+                <ul class="list-group mb-4">
+                    <li data-ano="19931" class="list-group-item">Porshe</li>
+                    <li data-ano="1939" class="list-group-item">Ferrari<span> - Itália</span></li>
+                    <li data-ano="1948" class="list-group-item">Land over</li>
+                    <li data-ano="1963" class="list-group-item">Lamborghini</li>
+                    <li data-ano="2003" class="list-group-item">Civic</li>
+                </ul>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary mb-4 mt-5" id="toggle_cars">Carros Novos</button>
+        
+
+        <form action="" id="register">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" name="" id="" class="form-control mb-4" placeholder="Email" disabled>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary form-control">Registrar</button>
+                    <input type="button" class="btn btn-primary mt-3" value="Registrar 2">
+                    <input type="submit" class="btn btn-info mt-3" value="Login">
+                </div>
+            </div>   
+        </form>
+        
+
+        <div class="field">
+            <label for="">
+                <input type="checkbox" name="logged"> <span>Manter conectado</span> 
+            </label>
+        </div>
+    
+    </div>
+
+    
+
+    
+    
+
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="assets/js/filtros-exibir-executar.js"></script>
+<script src="assets/js/filtros_formulario.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+       
+        $.expr[':'].carsCentury21 = function(el) {
+
+            if ($(el).data('ano') > 2000) {
+
+                return true;
+            }
+           //Clear Code -> return($(el).data('ano') > 2000);
+        };
+        /* =========================================*/
+
+        $.expr[':'].carsBeforeYear = $.expr.createPseudo(function(year){
+            return function(el) {
+                if ($(el).data('ano') < year) {
+                    return true;
+                }
+              //Clear Code -> return($(el).data('ano') < year);
+            }
+        });
+        
+        $('.list-group li:carsBeforeYear(1990)').css('color', 'orange');
+        
+       
+    });
+        
+    </script>
+    
+
+    
+</body>
+</html>

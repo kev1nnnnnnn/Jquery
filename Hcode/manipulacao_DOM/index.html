@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="header-border">
+        <div class="navbar mb-3 navbar-brand">
+            <ul class="nav">
+                <li class="nav-link">
+                    <a href="" title="pagina incial">Home</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">Serviços</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="col">
+            <h1 class="text-center titulo">Home Page</h1>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h1 id="titulo">Curso Jquery</h1>
+                <p class="paragrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium magnam laboriosam iure suscipit ipsa architecto perspiciatis nam aperiam doloremque ex, sit earum adipisci obcaecati, eius omnis alias labore sed officia!</p>
+                <p class="paragrafo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem tempora dolor ut dicta modi eos itaque laudantium illo obcaecati quisquam assumenda laboriosam suscipit quam deleniti minus, nemo quod aut adipisci!</p>
+                <hr>
+            </div>
+            <div class="col-md-6">
+                <h1 id="titulo">Curso Jquery</h1>
+                <p class="paragrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium magnam laboriosam iure suscipit ipsa architecto perspiciatis nam aperiam doloremque ex, sit earum adipisci obcaecati, eius omnis alias labore sed officia!</p>
+                <p class="paragrafo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem tempora dolor ut dicta modi eos itaque laudantium illo obcaecati quisquam assumenda laboriosam suscipit quam deleniti minus, nemo quod aut adipisci!</p>
+                <hr>
+            </div> 
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img src="assets/img/original.svg" alt="logo">
+            </div>
+       
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" name="email" class="form-control">
+
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" class="form-control">
+                        
+                        <label for="data">Data de nascimento</label>
+                        <input type="date" name="data" class="form-control">
+
+                        <label for="mconectado">Manter conectado</label>
+                        <input type="checkbox" name="check" class="mt-3 ml-2">
+                    </div>
+                </form>
+            </div>
+        </div>  
+    </div>
+
+    <div class="container cars_list">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="text-center">Carros do ano</h1>
+                <ul class="list-group">
+                    <li class="list-group-item active" data-ano="1931">Porsche</li>
+                    <li class="list-group-item" data-ano="1939">Ferrari</li>
+                    <li class="list-group-item" data-ano="1948">Land Rouver</li>
+                    <li class="list-group-item" data-ano="1963">Lamborghini</li>
+                    <li class="list-group-item" data-ano="2003">Fusca</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    
+   
+    
+    <script src="assets/js/manipulando_atributos.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script type="text/javascript">
+   $(document).ready(function(){
+        $('cars_list li').click(function(){
+            console.log($(this).data('ano'));
+        })
+
+
+   });
+    </script>
+
+    </body>
+</html>

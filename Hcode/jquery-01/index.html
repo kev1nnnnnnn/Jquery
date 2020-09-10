@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="titulo">Curso Jquery </h1>
+   <!--<img src="assets/img/hcode.png" alt="hcode">-->
+
+
+
+
+
+
+
+
+
+
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+            alert('minha pagina carregou');
+        });
+        $(document).ready(function(){
+            document.getElementById('titulo').style.color = 'red'
+        });
+
+        $(document).ready(function(){
+            initPage();
+            stylizeTitle();
+        });
+
+        //elemento descendente direto
+        //$('main>.title').css('border', 'solid 2px blue')
+
+    </script>
+    
+
+    
+</body>
+</html>

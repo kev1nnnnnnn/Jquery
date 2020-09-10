@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evitando Conflito</title>
+</head>
+<body>
+    
+    <h1 id="titulo">Meu Código Jquery </h1>
+   
+
+
+
+
+
+
+
+
+
+
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script>
+
+        let $2 = jQuery.noConflict();
+
+        $2(document).ready(function(){
+            $2('h1').css('border-bottom', 'solid')
+        });
+
+    </script>
+    
+
+    
+</body>
+</html>
